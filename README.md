@@ -38,18 +38,18 @@ pip install opencv-python
 python image_viewer.py /path/to/image/folder
 ```
 
-(Replate `/path/to/image/folder` with the actual path to the directory containing your images.)
+(Replace `/path/to/image/folder` with the actual path to the directory containing your images.)
 
 ### Example
 
 ```
-ptyon image_viewer.py images/
+python image_viewer.py images/
 ```
 This will display all the images in the `images/` folder in a loop, allowing you to control playback with the keyboard. 
 
 # To Do's:
 
 There are still items that need to be fixed for this program:
-[ ] Response to keyboard input.
-[ ] Check that frames are paused when using arrow keys. 
-[ ] Separate program to rename numbered files to ensure correct order. 
+- [ ] Response to keyboard input.
+- [ ] Check that frames are paused when using arrow keys. 
+- [ ] Separate program to rename numbered files to ensure correct order. 
