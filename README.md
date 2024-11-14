@@ -48,9 +48,6 @@ python image_viewer.py images/
 This will display all the images in the `images/` folder in a loop, allowing you to control playback with the keyboard. 
 
 # To Do's:
-
-There are still items that need to be fixed for this program:
-- [x] Response to keyboard input.
-- [x] Check that frames are paused when using arrow keys. 
+ 
 - [ ] Response to arrow keys. 
 - [ ] Separate program to rename numbered files to ensure correct order. 
