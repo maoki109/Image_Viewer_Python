@@ -13,8 +13,8 @@ This program works best for sequential images, such as frames captures from a li
 - Keyboard controls:
     - Spacebar: Pause/play.
     - 'q': Quit the program.
-    - Right arrow: Step forward one frame.
-    - Left arrow: Step backward one frame. 
+    - 'k': Step forward one frame.
+    - 'j': Step backward one frame. 
 
 ## Prerequisites:
 
@@ -50,6 +50,7 @@ This will display all the images in the `images/` folder in a loop, allowing you
 # To Do's:
 
 There are still items that need to be fixed for this program:
-- [ ] Response to keyboard input.
-- [ ] Check that frames are paused when using arrow keys. 
+- [x] Response to keyboard input.
+- [x] Check that frames are paused when using arrow keys. 
+- [ ] Response to arrow keys. 
 - [ ] Separate program to rename numbered files to ensure correct order. 

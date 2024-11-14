@@ -10,7 +10,7 @@ args = parser.parse_args()
 
 # Set variables
 IMAGE_FOLDER = args.folder
-FPS = 1 # Frames per second
+FPS = 10 # Frames per second
 WINDOW_TITLE = "Image Viewer"
 
 # Initialize playback variables and load images
@@ -30,8 +30,6 @@ while True:
     cv.putText(image, os.path.basename(image_path), (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
     cv.imshow(WINDOW_TITLE, image)
 
-    start_time = time.time() # for FSP control
-
     # Handle keyboard input
     key = cv.waitKey(1) & 0xFF
 
@@ -39,18 +37,14 @@ while True:
         paused = not paused
     elif key == ord('q'): # 'q' to quit
         break
-    elif key == 83: # right arrow key to move forward one image
+    elif key == ord('k') and paused: # 'k' to move forward one image
         current_frame = min(current_frame + 1, len(images) - 1)
-    elif key == 81: # left arrow key to move back one image
+    elif key == ord('j') and paused: # 'j' to move back one image
         current_frame = max(current_frame - 1, 0)
 
     # Update frame if not paused
     if not paused:
-        current_frame = (current_frame + 1) % len(images)
-
-    # FPS
-    elapsed_time = time.time() - start_time
-    delay = max(1, int((1.0 / FPS - elapsed_time) * 1000))
-    cv.waitKey(delay)
+        time.sleep(1.0 / FPS)
+        current_frame = (current_frame + 1) % len(images) # images loop
 
 cv.destroyAllWindows()
