@@ -32,8 +32,9 @@ pip install opencv-python
 ## Usage
 
 1. Clone this repository to your local machine. 
-2. Have the images you want to display in a directory.
-3. Run the program with the path to your image directory as an argument:
+2. Install dependences by running `pip install -r requirements.txt` from the command line.
+3. Have the images you want to display in a directory.
+4. Run the program with the path to your image directory as an argument:
 ```
 python image_viewer.py /path/to/image/folder
 ```
@@ -49,5 +50,7 @@ This will display all the images in the `images/` folder in a loop, allowing you
 
 # To Do's:
  
+- [ ] Documentation format.
 - [ ] Response to arrow keys. 
+- [ ] Fast forward or adjustable progress bar. 
 - [ ] Separate program to rename numbered files to ensure correct order. 
