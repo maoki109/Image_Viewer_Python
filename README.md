@@ -53,4 +53,55 @@ This will display all the images in the `images/` folder in a loop, allowing you
 - [ ] Documentation format.
 - [ ] Response to arrow keys. 
 - [ ] Fast forward or adjustable progress bar. 
-- [ ] Separate program to rename numbered files to ensure correct order. 
+- [x] Separate program to rename numbered files to ensure correct order. 
+
+# Renumber
+
+For my intial use case that motivated the image_viewer script, the image files were named with three parts:
+
+1. `capture` or `overlay`: image is just the raw `capture` from the webcam or it is the raw image with outputs from vision algorithms `overlay`ed on top. 
+2. The image number (e.g. 1, 2, 3, ...1800, 1801 ...)
+3. `man` to indicate that our system was using manual control when those images were taken, and blank if not. 
+
+So the image files I was working with were labeled like this:
+
+```
+capture-1-man.jpg
+capture-2-man.jpg
+capture-3-man.jpg
+...
+capture-1800.jpg
+capture-1801-man.jpg
+capture-1802-man.jpg
+capture-1803-man.jpg
+capture-1804.jpg
+capture-1805.jpg
+```
+
+## Problems
+
+1. The images with overlayed vision algorithm outputs were not needed when analyzing new vision algorithms. 
+2. The numbering system messed up sorting algorithms, such that when sorted it ordered 0, 1, 10, 100, 1000, 1001, 1002...
+
+## Renumber
+
+The `renumber.py` file removes image files that begin with `overlay` and adds zero-padding to the numbered part of the filename. 
+
+## Usage
+
+1. Clone this repository to your local machine. 
+2. Install dependences by running `pip install -r requirements.txt` from the command line.
+3. Have the images you want to rename in a directory.
+4. Run the program with the path to your image directory as an argument:
+```
+python renumber.py /path/to/image/folder
+```
+
+(Replace `/path/to/image/folder` with the actual path to the directory containing your images.)
+
+### Example
+
+```
+python renumber.py images/
+```
+This will rename all the images in the `images/` folder such that the numbers are zero-padded (up to 4 digits) and images starting with "overlay" are removed.  

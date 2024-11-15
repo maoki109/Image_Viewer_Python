@@ -24,7 +24,7 @@ def display_images(directory):
         # Load current image
         image_path = images[current_frame]
         image = cv.imread(image_path)
-        image = cv.resize(image, (800, 600)) # resize image to fit window
+        # image = cv.resize(image, (800, 600)) # resize image to fit window
 
         # Display image and its file path
         cv.putText(image, os.path.basename(image_path), (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
