@@ -48,7 +48,7 @@ python image_viewer.py images/
 ```
 This will display all the images in the `images/` folder in a loop, allowing you to control playback with the keyboard. 
 
-# To Do's:
+## To Do's:
  
 - [ ] Documentation format.
 - [ ] Response to arrow keys. 
@@ -78,16 +78,16 @@ capture-1804.jpg
 capture-1805.jpg
 ```
 
-## Problems
+### Problems
 
 1. The images with overlayed vision algorithm outputs were not needed when analyzing new vision algorithms. 
-2. The numbering system messed up sorting algorithms, such that when sorted it ordered 0, 1, 10, 100, 1000, 1001, 1002...
+2. The numbering system messed up sorting, such that it ordered files 0, 1, 10, 100, 1000, 1001, 1002...
 
 ## Renumber
 
 The `renumber.py` file removes image files that begin with `overlay` and adds zero-padding to the numbered part of the filename. 
 
-## Usage
+### Usage
 
 1. Clone this repository to your local machine. 
 2. Install dependences by running `pip install -r requirements.txt` from the command line.
