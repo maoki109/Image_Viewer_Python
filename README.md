@@ -85,7 +85,7 @@ capture-1805.jpg
 
 ## Renumber
 
-The `renumber.py` file removes image files that begin with `overlay` and adds zero-padding to the numbered part of the filename. 
+`renumber.py` is a helper script that removes image files that begin with `overlay` and adds zero-padding to the numbered part of the filename. 
 
 ### Usage
 
