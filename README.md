@@ -57,7 +57,7 @@ This will display all the images in the `images/` folder in a loop, allowing you
 
 # Renumber
 
-**UPDATE:** The Image Viewer script no longer requires this Renumber helper script. This script had added zero-padding to file names, but this is no longer needed as `natsort` is now used in Image Viewer. 
+**UPDATE:** The Image Viewer script no longer requires this Renumber helper script. This script had added zero-padding to file names, but this is no longer needed as `natsort` (natural sort) is now used in Image Viewer. 
 
 For my intial use case that motivated the image_viewer script, the image files were named with three parts:
 
