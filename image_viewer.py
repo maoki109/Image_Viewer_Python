@@ -2,6 +2,7 @@ import cv2 as cv
 import os
 import sys
 import time
+from natsort import natsorted
 
 def display_images(directory):
     """
@@ -16,7 +17,7 @@ def display_images(directory):
     # Initialize playback variables and load images
     current_frame = 0
     paused = False
-    images = [os.path.join(directory, img) for img in sorted(os.listdir(directory)) if img.endswith(('.png', '.jpg', '.jpeg'))]
+    images = [os.path.join(directory, img) for img in natsorted(os.listdir(directory)) if img.endswith(('.png', '.jpg', '.jpeg'))]
 
     cv.namedWindow(WINDOW_TITLE, cv.WINDOW_NORMAL)  # Create a resizable window
 
