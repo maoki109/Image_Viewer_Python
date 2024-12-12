@@ -54,6 +54,7 @@ This will display all the images in the `images/` folder in a loop, allowing you
 - [ ] Response to arrow keys.
 - [ ] Fast forward or adjustable progress bar.
 - [x] Separate program to rename numbered files to ensure correct order.
+- [ ] Investigate video input. 
 
 # Renumber
 
