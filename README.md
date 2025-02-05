@@ -54,19 +54,20 @@ This will display all the images in the `images/` folder in a loop, allowing you
 - [ ] Response to arrow keys.
 - [ ] Fast forward or adjustable progress bar.
 - [x] Separate program to rename numbered files to ensure correct order.
-- [ ] Investigate video input. 
+- [ ] Investigate video input.
+- [ ] Add a confirmation dialogue for renumber.py. 
 
 # Renumber
 
-**UPDATE:** The Image Viewer script no longer requires this Renumber helper script. This script had added zero-padding to file names, but this is no longer needed as `natsort` (natural sort) is now used in Image Viewer. 
+**UPDATE:** The Image Viewer script no longer requires this Renumber helper script. This script had added zero-padding to file names, but this is no longer needed as `natsort` (natural sort) is now used in Image Viewer.
 
-For my intial use case that motivated the image_viewer script, the image files were named with three parts:
+For my initial use case that motivated the image_viewer script, the image files were named with three parts:
 
 1. `capture` or `overlay`: image is just the raw `capture` from the webcam or it is the raw image with outputs from vision algorithms `overlay`ed on top.
 2. The image number (e.g. 1, 2, 3, ...1800, 1801 ...)
 3. `man` to indicate that our system was using manual control when those images were taken, and blank if not.
 
-So the image files I was working with were labeled like this:
+As an example, the image files I was working with were labeled like this:
 
 ```
 capture-1-man.jpg
