@@ -55,7 +55,7 @@ This will display all the images in the `images/` folder in a loop, allowing you
 - [ ] Fast forward or adjustable progress bar.
 - [x] Separate program to rename numbered files to ensure correct order.
 - [ ] Investigate video input.
-- [ ] Add a confirmation dialogue for renumber.py. 
+- [x] Add a confirmation dialogue for renumber.py. 
 
 # Renumber
 

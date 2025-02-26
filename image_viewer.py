@@ -1,10 +1,11 @@
+import argparse
 import cv2 as cv
 import os
 import sys
 import time
 from natsort import natsorted
 
-def display_images(directory):
+def display_images(directory, prefix):
     """
     Display images in a direcory in sequential order with ability to pause
     and move forward/backwards frame-by-frame.
@@ -17,7 +18,9 @@ def display_images(directory):
     # Initialize playback variables and load images
     current_frame = 0
     paused = False
-    images = [os.path.join(directory, img) for img in natsorted(os.listdir(directory)) if img.endswith(('.png', '.jpg', '.jpeg'))]
+    images = [os.path.join(directory, img) for img in natsorted(os.listdir(directory)) if (img.endswith(('.png', '.jpg', '.jpeg')) and img.startswith(prefix))]
+    # NOTE: natsorted identifies numbers anywhere in a string and sorts them "naturally."
+    # If naming convention changes, consider using other variations such as humansorted(). 
 
     cv.namedWindow(WINDOW_TITLE, cv.WINDOW_NORMAL)  # Create a resizable window
 
@@ -51,11 +54,27 @@ def display_images(directory):
     cv.destroyAllWindows()
 
 if __name__ == "__main__":
+    prefix = ""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("directory", help="path to image folder")
+    parser.add_argument("-p", "--prefix", help="specify prefix of files to view")
+    args = parser.parse_args()
+    if args.prefix:
+        prefix = args.prefix
+    display_images(args.directory, prefix=prefix)
     # Check that script is called with directory argument
-    if len(sys.argv) != 2:
-        print("Usage: python image_viewer.py /path/to/image/folder")
-        sys.exit(1)
+    # if len(sys.argv) < 2:
+    #     print("Usage: python image_viewer.py /path/to/image/folder")
+    #     sys.exit(1)
 
-    # Get directory from command line args
-    image_directory = sys.argv[1]
-    display_images(image_directory)
+    # # Get directory from command line args
+    # image_directory = sys.argv[1]
+
+    # parser = argparse.ArgumentParser(description="Image Viewer script with optional flags.")
+    # parser.add_argument(
+    #     "-p", "--prefix", type=str, default="capture", help="Specify prefix of files to view."
+    # )
+
+    # args = parser.parse_args()
+
+    # display_images(image_directory, prefix=args.prefix)
