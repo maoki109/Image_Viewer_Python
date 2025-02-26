@@ -45,6 +45,10 @@ def display_images(directory, prefix):
             current_frame = min(current_frame + 1, len(images) - 1)
         elif key == ord('j') and paused: # 'j' to move back one image
             current_frame = max(current_frame - 1, 0)
+        elif key == ord('l'): # 'l' to move forward 50 images
+            current_frame = min(current_frame + 50, len(images) - 1)
+        elif key == ord('h'): # 'h' to move back 50 images
+            current_frame = max(current_frame - 50, 0)
 
         # Update frame if not paused
         if not paused:

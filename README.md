@@ -15,6 +15,8 @@ This program works best for sequential images, such as frames captures from a li
     - 'q': Quit the program.
     - 'k': Step forward one frame.
     - 'j': Step backward one frame.
+    - 'l': Jump forward 50 frames.
+    - 'h': Jump backward 50 frames.
 
 ## Prerequisites:
 
