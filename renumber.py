@@ -2,7 +2,7 @@ import os
 import re
 import sys
 
-def zero_pad_filename(directory):
+def zero_pad_filename(directory, prefix="overlay"):
     """
     Delete files starting with 'overlay' and reformat image files to have
     zero-padded numbers for accurate sorting.
@@ -23,7 +23,7 @@ def zero_pad_filename(directory):
             continue
 
         # Delete files that start with "overlay"
-        if filename.startswith("overlay"):
+        if filename.startswith(prefix):
             print(f"Deleting file: {filename}")
             os.remove(file_path)
             continue
