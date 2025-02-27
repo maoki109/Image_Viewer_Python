@@ -2,6 +2,7 @@ import os
 import re
 import sys
 
+
 def zero_pad_filename(directory, prefix="overlay"):
     """
     Delete files starting with 'overlay' and reformat image files to have
@@ -10,8 +11,8 @@ def zero_pad_filename(directory, prefix="overlay"):
     # Check that directory exists
     if not os.path.isdir(directory):
         print(f"Eror: {directory} is not a valid directory.")
-        return 
-    
+        return
+
     # Regex pattern to match file names with numeric parts
     pattern = re.compile(r"^(.*?)(\d+)(.*)$")
 
@@ -28,7 +29,7 @@ def zero_pad_filename(directory, prefix="overlay"):
             os.remove(file_path)
             continue
 
-        # Reformat filenames 
+        # Reformat filenames
         match = pattern.match(filename)
         if match:
             prefix, number, suffix = match.groups()
@@ -41,14 +42,15 @@ def zero_pad_filename(directory, prefix="overlay"):
                 print(f"Renaming: {filename} -> {new_filename}")
                 os.rename(file_path, new_file_path)
 
+
 def user_confirmation(prompt="Are you sure?", valid_responses=("yes", "no")):
     """
     Asks the user for confirmation with a given prompt and validates the response.
-    
+
     Args:
         prompt (str, optional): The question to ask the user. Defaults to "Are you sure?".
         valid_responses (tuple, optional): Valid responses to accept. Defaults to ("yes", "no").
-    
+
     Returns:
         bool: True if the user confirms, False otherwise.
     """
@@ -58,6 +60,7 @@ def user_confirmation(prompt="Are you sure?", valid_responses=("yes", "no")):
             return response == "yes"
         else:
             print("Invalid input. Please enter", '/'.join(valid_responses))
+
 
 if __name__ == "__main__":
     # Check that script is called with directory argument

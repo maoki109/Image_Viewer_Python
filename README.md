@@ -54,10 +54,11 @@ This will display all the images in the `images/` folder in a loop, allowing you
 
 - [ ] Documentation format.
 - [ ] Response to arrow keys.
-- [ ] Fast forward or adjustable progress bar.
+- [x] Fast forward or adjustable progress bar.
 - [x] Separate program to rename numbered files to ensure correct order.
 - [ ] Investigate video input.
 - [x] Add a confirmation dialogue for renumber.py. 
+- [x] Fast forward and faster rewind.
 
 # Renumber
 
