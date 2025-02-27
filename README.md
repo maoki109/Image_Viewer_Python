@@ -72,6 +72,7 @@ This will display all the images in the 'images/' folder with the prefix "captur
 - [ ] Investigate video input.
 - [x] Add a confirmation dialogue for renumber.py. 
 - [x] Fast forward and faster rewind.
+- [ ] Textbox input to jump to a certain image.
 
 # Renumber
 
