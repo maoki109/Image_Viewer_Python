@@ -17,6 +17,7 @@ This program works best for sequential images, such as frames captures from a li
     - 'j': Step backward one frame.
     - 'l': Jump forward 50 frames.
     - 'h': Jump backward 50 frames.
+- Trackbar to navigate through frames.
 
 ## Prerequisites:
 
@@ -43,16 +44,28 @@ python image_viewer.py /path/to/image/folder
 
 (Replace `/path/to/image/folder` with the actual path to the directory containing your images.)
 
-### Example
+5. To run program for images in a directory with a specific prefix, use `-p` or `--prefix` flag:
+```
+python image_viewer.py /path/to/image/folder -p prefix_str
+```
+
+(Replace `/path/to/image/folder` with the actual path to the directory containing your images, and replace `prefix_str` with the string you want to filter your image files with.)
+
+### Examples
 
 ```
 python image_viewer.py images/
 ```
-This will display all the images in the `images/` folder in a loop, allowing you to control playback with the keyboard.
+This will display all the images in the `images/` folder in a loop, allowing you to control playback with the keyboard and trackbar.
+
+```
+python image_viewer.py images/ -p capture
+```
+This will display all the images in the 'images/' folder with the prefix "capture" in their filename (e.g. capture-1.png, capture-2.png, ...) in a loop, allowing you to control playback with the keyboard and trackbar. 
 
 ## To Do's:
 
-- [ ] Documentation format.
+- [x] Documentation format.
 - [ ] Response to arrow keys.
 - [x] Fast forward or adjustable progress bar.
 - [x] Separate program to rename numbered files to ensure correct order.
