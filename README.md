@@ -1,4 +1,4 @@
-# Image_Viewer_Python
+# Image Viewer (Python)
 
 This Python program displays images from a specified directory in a video-like sequence, allowing users to navigate through images. The programs shows each image at an adjustable frames-per-second (FPS) rate, displays the image file name at the top of the window, and provides controls for pausing, playing, and stepping through frames.
 
